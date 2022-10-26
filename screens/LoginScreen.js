@@ -8,9 +8,14 @@ function LoginScreen() {
   const [isAuthenticating, setIsAuthenticating] = useState(false);
 
   async function loginHandler({ email, password }) {
-    setIsAuthenticating(true);
-    await login(email, password);
-    setIsAuthenticating(false);
+    try {
+      await login(email, password);
+    } catch (error) {
+      Alert.alert(
+        "Authentication failed!",
+        "Could not log you in. Please check your credentials or try again later!"
+      );
+    }
   }
 
   if (isAuthenticating) {
