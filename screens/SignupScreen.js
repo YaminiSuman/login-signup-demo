@@ -8,7 +8,7 @@ function SignupScreen() {
 
   async function signupHandler({ email, password }) {
    try {
-     await login(email, password);
+     await createUser(email, password);
    } catch (error) {
      Alert.alert(
        "Authentication failed!",
