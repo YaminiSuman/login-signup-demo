@@ -12,7 +12,7 @@ function SignupScreen() {
    } catch (error) {
      Alert.alert(
        "Authentication failed!",
-       "Could not sign you up. Please check your credentials or try again later!"
+       "Could not create user, please check your input and try again later."
      );
    }
   }
